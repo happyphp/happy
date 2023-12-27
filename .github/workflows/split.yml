@@ -1,51 +1,62 @@
-name: Split
+name: 'Packages Split'
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
+        tags:
+            - '*'
 
-    # see https://github.community/t/how-to-run-github-actions-workflow-only-for-new-tags/16075/10?u=tomasvotruba
-    tags:
-      - '*'
-
-  pull_request: null
-
-  release:
-    types: [created]
+env:
+    # 1. for Github split
+    GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 jobs:
-  split:
-    runs-on: ubuntu-latest
+    packages_split:
+        runs-on: ubuntu-latest
 
-    steps:
-      -
-        uses: danharrin/monorepo-split-github-action@v2.3.0
+        strategy:
+            fail-fast: false
+            matrix:
+                # define package to repository map
+                package:
+                    -
+                        local_path: 'installer'
+                        split_repository: 'installer'
+                    -
+                        local_path: 'framework'
+                        split_repository: 'framework'
+                    
 
-      -
-        # run action.yaml in the root directory
-        # see https://github.community/t/self-reference-an-action-for-testing/17891
-        uses: "./"
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        with:
-          package_directory: 'packages/installer'
-          repository_organization: 'HappyPHP'
-          repository_name: 'installer'
+        steps:
+            -   uses: actions/checkout@v2
 
-          # change to use that should be signed under the split commit
-          user_name: 'dluague'
-          user_email: 'darwinluague9001@gmail.com'
-      - # run action.yaml in the root directory
-        # see https://github.community/t/self-reference-an-action-for-testing/17891
-        uses: "./"
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        with:
-          package_directory: 'packages/framework'
-          repository_organization: 'HappyPHP'
-          repository_name: 'framework'
+            # no tag
+            -
+                if: "!startsWith(github.ref, 'refs/tags/')"
+                uses: "symplify/monorepo-split-github-action@2.1"
+                with:
+                    package_directory: 'packages/${{ matrix.package.local_path }}'
 
-          # change to use that should be signed under the split commit
-          user_name: 'dluague'
-          user_email: 'darwinluague9001@gmail.com'
+                    repository_organization: 'happyphp'
+                    repository_name: '${{ matrix.package.split_repository }}'
+
+                    # ↓ the user signed under the split commit
+                    user_name: "dluague"
+                    user_email: "darwinluague9001@gmail.com"
+
+            # with tag
+            -
+                if: "startsWith(github.ref, 'refs/tags/')"
+                uses: "symplify/monorepo-split-github-action@2.1"
+                with:
+                    tag: ${GITHUB_REF#refs/tags/}
+
+                    package_directory: 'packages/${{ matrix.package.local_path }}'
+
+                    repository_organization: 'happyphp'
+                    repository_name: '${{ matrix.package.split_repository }}'
+
+                    # ↓ the user signed under the split commit
+                    user_name: "dluague"
+                    user_email: "darwinluague9001@gmail.com"
