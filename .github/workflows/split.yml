@@ -42,7 +42,7 @@ jobs:
                     repository_name: '${{ matrix.package.split_repository }}'
 
                     # ↓ the user signed under the split commit
-                    user_name: "happyphp"
+                    user_name: "dluague"
                     user_email: "darwinluague9001@gmail.com"
 
             # with tag
@@ -58,5 +58,5 @@ jobs:
                     repository_name: '${{ matrix.package.split_repository }}'
 
                     # ↓ the user signed under the split commit
-                    user_name: "happyphp"
+                    user_name: "dluague"
                     user_email: "darwinluague9001@gmail.com"
