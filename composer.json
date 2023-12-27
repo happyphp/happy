@@ -1,0 +1,48 @@
+{
+    "description": "The monorepo for the Happy PHP framework",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Darwin Luague",
+            "email": "darwinluague9001@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/filesystem": "^10.38",
+        "illuminate/support": "^10.38",
+        "laravel/prompts": "^0.1.13",
+        "php": "^8.1",
+        "symfony/console": "^7.0",
+        "symfony/process": "^7.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.13",
+        "pestphp/pest": "^2.28",
+        "symplify/monorepo-builder": "^11.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": [
+                "packages/framework/src",
+                "packages/framework/src/"
+            ],
+            "Happy\\Installer\\Console\\": "packages/installer/src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Happy\\Installer\\Console\\Tests\\": "packages/installer/tests"
+        }
+    },
+    "replace": {
+        "happy/happy": "self.version",
+        "happy/installer": "self.version"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable"
+}
