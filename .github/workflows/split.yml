@@ -8,7 +8,7 @@ on:
             - '*'
 
 env:
-    # 1. for Github split
+    # 1. for GitHub split
     GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 jobs:
@@ -24,8 +24,14 @@ jobs:
                         local_path: 'installer'
                         split_repository: 'installer'
                     -
+                        local_path: 'contracts'
+                        split_repository: 'contracts'
+                    -
                         local_path: 'framework'
                         split_repository: 'framework'
+                    -
+                        local_path: 'support'
+                        split_repository: 'support'
                     
 
         steps:

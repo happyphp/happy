@@ -5,6 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/framework/src" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/packages/installer/src" isTestSource="false" packagePrefix="Happy\Installer\Console\" />
       <sourceFolder url="file://$MODULE_DIR$/packages/installer/tests" isTestSource="true" packagePrefix="Happy\Installer\Console\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/contracts" isTestSource="false" packagePrefix="Happy\Contracts\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/support" isTestSource="false" packagePrefix="Happy\Support\" />
       <excludeFolder url="file://$MODULE_DIR$/packages/installer/vendor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/carbonphp/carbon-doctrine-types" />
