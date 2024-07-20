@@ -1,0 +1,29 @@
+{
+    "name": "haphp/data",
+    "description": "A simple Data Transfer Object for PHP.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Haphp\\Data\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Darwin Luague",
+            "email": "darwinluague9001@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^v11.15.0",
+        "illuminate/http": "v11.15.0",
+        "illuminate/database": "^v11.15.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.13",
+        "pestphp/pest": "^v2.28",
+        "orchestra/testbench": "^v9.2.0"
+    }
+}
