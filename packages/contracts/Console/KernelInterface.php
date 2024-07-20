@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Happy\Contracts\Console;
+namespace Haphp\Contracts\Console;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

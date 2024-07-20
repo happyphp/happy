@@ -1,8 +1,8 @@
 <?php
 
-namespace Happy\Contracts\Http;
+namespace Haphp\Contracts\Http;
 
-use Happy\Contracts\Foundation\ApplicationInterface;
+use Haphp\Contracts\Foundation\ApplicationInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

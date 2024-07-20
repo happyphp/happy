@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Happy\Contracts\Foundation;
+namespace Haphp\Contracts\Foundation;
 
-use Happy\Contracts\Container\ContainerInterface;
-use Happy\Support\AbstractServiceProvider;
+use Haphp\Contracts\Container\ContainerInterface;
+use Haphp\Support\AbstractServiceProvider;
 use RuntimeException;
 
 interface ApplicationInterface extends ContainerInterface

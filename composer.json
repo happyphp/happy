@@ -9,15 +9,22 @@
         }
     ],
     "require": {
+        "ext-mbstring": "*",
         "illuminate/filesystem": "^10.38",
         "illuminate/support": "^10.38",
         "laravel/prompts": "^0.1.13",
+        "league/commonmark": "2.4.1",
         "php": "^8.3",
         "psr/container": "^1.1.1|^2.0.1",
         "psr/simple-cache": "^1.0|^2.0|^3.0",
+        "ramsey/uuid": "4.7.5",
         "symfony/console": "^7.0",
-        "symfony/http-foundation": "7.1.x-dev",
-        "symfony/process": "^7.0"
+        "symfony/http-foundation": "^7.0",
+        "symfony/http-kernel": "^7.0",
+        "symfony/process": "^7.0",
+        "symfony/uid": "v7.0.0",
+        "symfony/var-dumper": "v7.0.0",
+        "voku/portable-ascii": "2.0.1"
     },
     "require-dev": {
         "laravel/pint": "^1.13",
@@ -26,33 +33,30 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": [
-                "packages/framework/src",
-                "packages/framework/src/"
-            ],
-            "Happy\\Contracts\\": "packages/contracts/",
-            "Happy\\Installer\\Console\\": [
-                "packages/installer/src",
-                "packages/installer/src/"
-            ],
-            "Happy\\Support\\": "packages/support/"
+            "App\\": "packages/framework/src/",
+            "Haphp\\Contracts\\": "packages/contracts/",
+            "Haphp\\Filesystem\\": "packages/filesystem/",
+            "Haphp\\Foundation\\": "packages/foundation/",
+            "Haphp\\Http\\": "packages/http/",
+            "Haphp\\Installer\\Console\\": "packages/installer/src/",
+            "Haphp\\Session\\": "packages/session/",
+            "Haphp\\Support\\": "packages/support/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Happy\\Installer\\Console\\Tests\\": [
-                "packages/installer/tests",
-                "packages/installer/tests/"
-            ]
+            "Haphp\\Installer\\Console\\Tests\\": "packages/installer/tests/"
         }
     },
     "replace": {
         "haphp/contracts": "self.version",
+        "haphp/filesystem": "self.version",
+        "haphp/foundation": "self.version",
         "haphp/happy": "self.version",
+        "haphp/http": "self.version",
         "haphp/installer": "self.version",
-        "haphp/support": "self.version",
-        "happy/happy": "self.version",
-        "happy/installer": "self.version"
+        "haphp/session": "self.version",
+        "haphp/support": "self.version"
     },
     "config": {
         "allow-plugins": {

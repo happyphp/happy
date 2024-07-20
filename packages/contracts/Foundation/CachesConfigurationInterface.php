@@ -1,6 +1,6 @@
 <?php
 
-namespace Happy\Contracts\Foundation;
+namespace Haphp\Contracts\Foundation;
 
 interface CachesConfigurationInterface
 {

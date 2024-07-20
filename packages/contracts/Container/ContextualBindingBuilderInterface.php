@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Happy\Contracts\Container;
+namespace Haphp\Contracts\Container;
 
 use Closure;
 

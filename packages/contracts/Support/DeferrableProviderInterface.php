@@ -1,6 +1,6 @@
 <?php
 
-namespace Happy\Contracts\Support;
+namespace Haphp\Contracts\Support;
 
 interface DeferrableProviderInterface
 {

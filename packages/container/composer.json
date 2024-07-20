@@ -1,0 +1,35 @@
+{
+    "name": "haphp/container",
+    "description": "The Happy Container package.",
+    "license": "MIT",
+    "homepage": "https://haphp.com",
+    "support": {
+        "issues": "https://github.com/happyphp/happy/issues",
+        "source": "https://github.com/happyphp/happy"
+    },
+    "authors": [
+        {
+            "name": "Darwin Luague",
+            "email": "darwin@haphp.io"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "haphp/contracts": "^1.0",
+        "psr/container": "^1.1.1|^2.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Haphp\\Container\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}

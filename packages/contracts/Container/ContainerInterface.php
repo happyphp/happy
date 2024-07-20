@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Happy\Contracts\Container;
+namespace Haphp\Contracts\Container;
 
 use Closure;
 use InvalidArgumentException;
@@ -27,7 +27,7 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
      *
      * @param  mixed|array  ...$tags
      */
-    public function tag(array|string $abstracts, array ...$tags): void;
+    public function tag(array|string $abstracts, array $tags): void;
 
     /**
      * Resolve all the bindings for a given tag.

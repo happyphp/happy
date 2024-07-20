@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Happy\Contracts\Foundation;
+namespace Haphp\Contracts\Foundation;
 
 use Throwable;
 
